@@ -1,8 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+
 //mvc service added
 builder.Services.AddControllersWithViews();
 
+var app = builder.Build();
 //route with controller => Controller/Action/id
 app.MapDefaultControllerRoute();
 
