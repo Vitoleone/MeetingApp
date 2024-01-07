@@ -6,6 +6,7 @@ namespace MeetingApp
     {
         public IActionResult Index()
         {
+            ViewBag.Title = "Homepage";
             return View();
         }
     }
