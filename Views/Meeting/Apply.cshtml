@@ -1,4 +1,26 @@
+@{
+    Layout = "_Layout2";
+}
 <h1 class="h4">Toplantı Katılım Formu</h1>
-<form action="">
+<form method="post">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" name="Name" id="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Phone" class="form-label">Phone</label>
+        <input type="text" name="Phone" id="Phone" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" name="Email" id="Email" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="WillAttend" class="form-label">Email</label>
+        <select name="WillAttend" id="WillAttend" class="form-select">
+            <option value="true">Yes, I'll attend.</option>
+            <option value="false">No, I'll not attend.</option>
+        </select>
+    </div>
     <button class="btn btn-primary" type="submit">Kaydet</button>
 </form>
