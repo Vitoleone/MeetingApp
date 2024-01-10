@@ -14,10 +14,18 @@ namespace MeetingApp
         [HttpPost]
         public IActionResult Apply(UserInfo userInfo)
         {
-            ViewBag.Title = "Başvuru Durumu";
-            Repository.CreateUser(userInfo);
-            ViewBag.UserCount = Repository.Users.Where(i=>i.WillAttend == true).Count();
-            return View("Thanks",userInfo);
+            if(ModelState.IsValid)
+            {
+                ViewBag.Title = "Başvuru Durumu";
+                Repository.CreateUser(userInfo);
+                ViewBag.UserCount = Repository.Users.Where(i=>i.WillAttend == true).Count();
+                return View("Thanks",userInfo);
+            }
+            else
+            {
+                return View(userInfo);
+            }
+           
         }
 
         public IActionResult List()
