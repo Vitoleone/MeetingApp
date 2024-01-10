@@ -5,11 +5,6 @@ namespace MeetingApp
 {
     public class MeetingController : Controller
     {
-        public IActionResult Index()
-        {
-            ViewBag.Title = "Meeting Page";
-            return View();
-        }
         [HttpGet]
         public IActionResult Apply()
         {
@@ -19,14 +14,16 @@ namespace MeetingApp
         [HttpPost]
         public IActionResult Apply(UserInfo userInfo)
         {
-            ViewBag.Title = "Apply";
-            return View();
+            ViewBag.Title = "Başvuru Durumu";
+            Repository.CreateUser(userInfo);
+            ViewBag.UserCount = Repository.Users.Where(i=>i.WillAttend == true).Count();
+            return View("Thanks",userInfo);
         }
 
         public IActionResult List()
         {
             ViewBag.Title = "User List";
-            return View();
+            return View(Repository.Users);
         }
     }
 }

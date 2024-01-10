@@ -1,0 +1,13 @@
+@model UserInfo
+
+<main class="text-center">
+    <h1 class="h4">Başvuru Durumu</h1>
+    @if(@Model.WillAttend == true)
+    {
+        <p>Thanks for your attendace @Model.Name There are @ViewBag.UserCount people will attend meeting.</p>
+        <a class="btn btn-sm btn-outline-primary" href="/meeting/list">Katılımcıları listele</a>
+    }
+    else{
+        <p>We regret that @Model.Name will not be attending the meeting</p>
+    }
+</main>
