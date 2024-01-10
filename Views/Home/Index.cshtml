@@ -1,6 +1,14 @@
+@model MeetingInfo
 @{
     Layout = "_Layout2";
 }
 <h1>Merhaba!</h1>
 <h2>Toplantı başvuru durumunuzu bildiriniz!</h2>
+<div class="card my-2">
+    <ul class="list-group list group-flush">
+        <li class="list-group-item">@Model.Location</li>
+        <li class="list-group-item">@Model.Date.ToString("dd/MM/yyyy HH:mm")</li>
+        <li class="list-group-item">@Model.NumberOfPeople</li>
+    </ul>
+</div>
 <a class="btn btn-sm btn-outline-primary" href="~/meeting/apply">Başvuru yap</a>
