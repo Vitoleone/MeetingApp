@@ -1,3 +1,4 @@
+using MeetingApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetingApp
@@ -16,7 +17,7 @@ namespace MeetingApp
             return View();
         }
         [HttpPost]
-        public IActionResult Apply(string Name, string Phone, string Email, bool WillAttend)
+        public IActionResult Apply(UserInfo userInfo)
         {
             ViewBag.Title = "Apply";
             return View();
